@@ -43,6 +43,10 @@ const server = http.createServer((req, res) => {
             }
             res.end();        
         });    
+    } else { // response in case bad request
+        res.writeHead(404);
+        res.write('content you are looking are Not Found');
+        res.end();
     }
 })
 server.listen(port, hostname, () => {
